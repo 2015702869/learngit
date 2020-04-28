@@ -1,0 +1,78 @@
+服务器数据连接
+ip:49.235.238.18
+用户名：root
+密码： 1q2w3e4r@!Ab
+重启apache：systemctl restart httpd.service
+查看状态：systemctl status httpd.service
+sudo yum install php-pdo
+yum list installed mysql*
+
+mysql：mysql -uroot -p
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';
+
+grep 'temporary password' /var/log/mysqld.log 
+
+systemctl status mysqld
+
+mysql> alter user "root"@"localhost" identified by "NewPassword";
+
+mysql> flush privileges;
+
+退出重启mysql服务
+
+systemctl restart mysqld
+
+修改完成
+
+mysql>use mysql
+
+
+mysql>update user set host = ‘%’ where user =’root’;?
+
+
+mysql>flush privileges;
+?
+
+此时，就可以远程登录了。
+
+如果远程连不上，可能是防火墙导致的，关闭防火墙即可。
+
+
+systemctl stop firewalld.service
+set password for 'root'@'localhost'=password('1q2w3e4r@!Ab'); 
+
+systemctl start mysqld
+
+卸载php版本
+rpm -qa|grep php
+
+# rpm -e php-mysql-5.1.6-27.el5_5.3 
+# rpm -e php-pdo-5.1.6-27.el5_5.3 
+# rpm -e php-xml-5.1.6-27.el5_5.3 
+# rpm -e php-cli-5.1.6-27.el5_5.3 
+# rpm -e php-gd-5.1.6-27.el5_5.3 
+# rpm -e php-common-5.1.6-27.el5_5.3 
+
+运行它：systemctl start httpd.service
+安装php7.2
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm   
+
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+ sudo yum list php*
+sudo yum -y install php72w
+yum -y install php72w-cli php72w-common php72w-devel php72w-mysql 
+sudo find / -name php.ini
+
+修改目录权限
+chmod 777 /var/home/userid/cc
+
+修改目录及子目录权限
+chmod -R 777 /var/home/userid/cc
+
+修改文件权限
+chmod 777 index.html
+
+通配符
+chmod 777 *.*
+chmod 777 *.html
