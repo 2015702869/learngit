@@ -1,3 +1,8 @@
 123456789dsfsderewrewrewafds
 shayebushi
+<<<<<<< HEAD
 456789-++-583674
+=======
+123456789sdf
+>>>>>>> featurel
+Creating a new branch is quick and simple.
